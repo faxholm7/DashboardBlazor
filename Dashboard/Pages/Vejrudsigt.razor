@@ -1,0 +1,49 @@
+﻿@page "/vejrudsigt"
+
+<PageTitle>Weather forecast</PageTitle>
+
+@using Dashboard.Data
+@inject WeatherForecastService ForecastMultiService
+
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+
+}
+else
+{
+    <h1>Vejrudsigt for <span>@forecasts[0].Location</span></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Dato</th>
+                <th>Klokken</th>
+                <th>Temperature. (&#8451;)</th>
+                <th>Cloudcover (%)</th>
+                <th>Conditions</th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach (var forecast in forecasts)
+            {
+                <tr>
+                     <td>@forecast.Day.ToShortDateString()</td>
+                     <td>@forecast.Day.Hour<span>.00</span></td>
+                    <td>@forecast.Temperature</td>
+                    <td>@forecast.Cloudcover</td>
+                    <td>@forecast.Conditions</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private WeatherForecast[]? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await ForecastMultiService.GetWeatherMultiAsync("Kolding", "Jeger1studerende");
+    }
+}
