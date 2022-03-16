@@ -25,14 +25,14 @@ namespace Dashboard.Data
 
         }
 
-        public Task<WeatherForecast[]> GetWeatherMultiAsync(string location, string key)
+        public async Task<WeatherForecast[]> GetWeatherMultiAsync(string location, string key)
         {
 
             ForecastServiceClient client = new();
             Forecast response = client.GetForecastAsync(location, key).Result.Body.GetForecastResult;
 
             var result = response.location.values;
-            return Task.FromResult(Enumerable.Range(0, 24).Select(index => new WeatherForecast
+            return await Task.FromResult(Enumerable.Range(0, 24).Select(index => new WeatherForecast
             {
                 Cloudcover = (float)result[index].cloudcover,
                 Temperature = (float)result[index].temp,
