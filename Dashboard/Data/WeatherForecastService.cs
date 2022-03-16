@@ -10,17 +10,17 @@ namespace Dashboard.Data
 
             ForecastServiceClient client = new();
             Forecast response = client.GetForecastAsync(location, key).Result.Body.GetForecastResult;
-         
-                var result = response.location.values[1];
 
-                return await Task.FromResult(new WeatherForecast
-                {
-                    Cloudcover = (float)result.cloudcover,
-                    Temperature = (float)result.temp,
-                    Conditions = result.conditions,
-                    Day = DateTimeOffset.FromUnixTimeMilliseconds(result.datetime).DateTime,
-                    Location = location
-                });        
+            var result = response.location.values[1];
+
+            return await Task.FromResult(new WeatherForecast
+            {
+                Cloudcover = (float)result.cloudcover,
+                Temperature = (float)result.temp,
+                Conditions = result.conditions,
+                Day = DateTimeOffset.FromUnixTimeMilliseconds(result.datetime).DateTime,
+                Location = location
+            });
 
 
         }
@@ -45,3 +45,4 @@ namespace Dashboard.Data
 
         }
     }
+}
