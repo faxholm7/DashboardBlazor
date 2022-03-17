@@ -13,7 +13,7 @@ namespace Dashboard.Services
         }
         public async Task<IEnumerable<PowerPriceModel>> getPowerPrice()
         {
-            return await httpClient.GetJsonAsync<PowerPriceModel[]>("api/Powerprice/getPowerPrice");
+            return await httpClient.GetJsonAsync<PowerPriceModel[]>("http://localhost:5020/api/Powerprice/getPowerPrice");
         }
     }
 }
