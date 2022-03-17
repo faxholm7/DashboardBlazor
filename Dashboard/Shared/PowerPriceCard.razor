@@ -19,14 +19,13 @@
             else
             { 
                 <table class="table">
-                @foreach (var item in data)
-                {
+              
                     <tr>    
-                        <td>@item.HourDK</td>
-                        <td>@item.SpotPriceDKK/(365*24)</td>
+                        <td>@data.HourDK</td>
+                        <td>@data.SpotPriceDKK</td>
                     </tr>
                     
-                }
+               
                 </table>
             }
 
@@ -34,7 +33,7 @@
         </div>
     </div>
 @code{
-    private IEnumerable<PowerPriceModel> data = null;
+    private PowerPriceModel data = null;
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();

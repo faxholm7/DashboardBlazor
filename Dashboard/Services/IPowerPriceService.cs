@@ -4,6 +4,6 @@ namespace Dashboard.Services
 {
     public interface IPowerPriceService
     {
-        Task<IEnumerable<PowerPriceModel>> getPowerPrice();
+        Task<PowerPriceModel> getPowerPrice();
     }
 }
