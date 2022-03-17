@@ -1,0 +1,46 @@
+﻿
+@using DataModels
+@using Dashboard.Services
+@inject IPowerPriceService _powerpriceservice
+
+    <div class="col-xl-3">
+        <div class="card mb-3">
+            <div class="card-header">
+               <b>Placeholder</b>
+            </div>
+            <div class="card-body">
+                <em class="card-title">
+                   Elpris den kommende time
+                    </em>
+            @if(data == null)
+            {
+                <p>Loading...</p>
+            }
+            else
+            { 
+                <table class="table">
+                @foreach (var item in data)
+                {
+                    <tr>    
+                        <td>@item.HourDK</td>
+                        <td>@item.SpotPriceDKK</td>
+                    </tr>
+                    
+                }
+                </table>
+            }
+
+            </div>
+        </div>
+    </div>
+@code{
+    private IEnumerable<PowerPriceModel> data = null;
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        data = await _powerpriceservice.getPowerPrice();
+    }
+
+  }
+
+
