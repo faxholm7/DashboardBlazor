@@ -14,19 +14,17 @@
                     </em>
             @if(data == null)
             {
-                <p>Loading...</p>
+               <p class="mt-5"><em>Henter data...</em></p> 
             }
             else
             { 
-                <table class="table">
-              
-                    <tr>    
-                        <td>@data.HourDK</td>
-                        <td>@data.SpotPriceDKK</td>
-                    </tr>
-                    
-               
-                </table>
+
+                <ul class="list-group list-group-flush mt-3 mb-2">
+                            <li class="list-group-item">Dato: <span class="float-end">@data.HourDK.ToShortDateString()</span></li>
+                            <li class="list-group-item">Klokken: <span class="float-end">@data.HourDK.ToString("HH:mm")</span></li>
+                            <li class="list-group-item">Pris: <span class="float-end">@data.SpotPriceDKK DKK</span></li>
+                        </ul>
+                        <button type="button" class="btn btn-primary btn-sm float-end">Reload</button>
             }
 
             </div>

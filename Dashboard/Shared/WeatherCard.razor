@@ -1,39 +1,39 @@
-﻿
-@using Dashboard.Data
+﻿@using Dashboard.Data
 @inject WeatherForecastService ForecastService
 
 
+<div class="col-xl-3">
+    <div class="card mb-3">
+        <div class="card-header">
+            <b>Vejret i <span>@forecast.Location</span></b>
+        </div>
+        <div class="card-body">
 
-@if (forecast == null)
-{
-    <p><em>Loading...</em></p>
 
-}
-else
-{
+            @if (forecast == null)
+            {
+                <p class="mt-5"><em>Loading...</em></p>
 
-    <div class="col-xl-3">
-        <div class="card mb-3">
-            <div class="card-header">
-               <b>Vejret i <span>@forecast.Location</span></b>
-            </div>
-            <div class="card-body">
+            }
+            else
+            {
+
                 <em class="card-title">
-                   Den <span>@forecast.Day.ToShortDateString()</span>
-                   kl.<span>@forecast.Day.ToString("HH:mm")</span> og en time frem
-                    </em>
-                        <ul class="list-group list-group-flush mt-3 mb-2">
-                            <li class="list-group-item">Temperatur: <span>@forecast.Temperature</span> &#8451;</li>
-                            <li class="list-group-item">Skydække: <span>@forecast.Cloudcover</span> %</li>
-                            <li class="list-group-item">Conditions: <span>@forecast.Conditions</span></li>
-                        </ul>
-                        <button type="button" class="btn btn-primary btn-sm float-end">Reload</button>
-            </div>
+                    Den <span>@forecast.Day.ToShortDateString()</span>
+                    kl.<span>@forecast.Day.ToString("HH:mm")</span> og en time frem
+                </em>
+                <ul class="list-group list-group-flush mt-3 mb-2">
+                    <li class="list-group-item">Temperatur: <span class="float-end">@forecast.Temperature &#8451;</span></li>
+                    <li class="list-group-item">Skydække: <span class="float-end">@forecast.Cloudcover %</span> </li>
+                    <li class="list-group-item">Conditions: <span class="float-end">@forecast.Conditions</span></li>
+                </ul>
+                <button type="button" class="btn btn-primary btn-sm float-end">Reload</button>
+
+            }
+
         </div>
     </div>
-  
-}
-
+</div>
 @code {
     private WeatherForecast? forecast;
 
