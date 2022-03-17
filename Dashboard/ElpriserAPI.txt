@@ -1,0 +1,1 @@
+﻿https://api.energidataservice.dk/datastore_search_sql?sql=SELECT "HourDK", "SpotPriceDKK" from "elspotprices" WHERE "PriceArea"='DK1' ORDER BY "HourDK" DESC LIMIT 24
