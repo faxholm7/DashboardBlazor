@@ -10,10 +10,9 @@
         </div>
         <div class="card-body">
 
-
             @if (forecast == null)
             {
-                <p class="mt-5"><em>Loading...</em></p>
+                <p class="mt-5 mb-5"><em>Henter data...</em></p>
 
             }
             else
@@ -40,7 +39,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var result = await _forecastservice.GetWeather();
+        var forecast = await _forecastservice.GetWeather();
 
     }
 }
