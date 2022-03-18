@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ServiceReferenceWeather
+namespace ServiceReferenceForecast
 {
     using System.Runtime.Serialization;
     
@@ -18,18 +18,18 @@ namespace ServiceReferenceWeather
     public partial class Forecast : object
     {
         
-        private ServiceReferenceWeather.Columns columnsField;
+        private ServiceReferenceForecast.Columns columnsField;
         
         private System.Nullable<float> remainingCostField;
         
         private System.Nullable<float> queryCostField;
         
-        private ServiceReferenceWeather.Object messagesField;
+        private ServiceReferenceForecast.Object messagesField;
         
-        private ServiceReferenceWeather.Location locationField;
+        private ServiceReferenceForecast.Location locationField;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ServiceReferenceWeather.Columns columns
+        public ServiceReferenceForecast.Columns columns
         {
             get
             {
@@ -68,7 +68,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public ServiceReferenceWeather.Object messages
+        public ServiceReferenceForecast.Object messages
         {
             get
             {
@@ -81,7 +81,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public ServiceReferenceWeather.Location location
+        public ServiceReferenceForecast.Location location
         {
             get
             {
@@ -100,38 +100,38 @@ namespace ServiceReferenceWeather
     public partial class Columns : object
     {
         
-        private ServiceReferenceWeather.Temp tempField;
+        private ServiceReferenceForecast.Temp tempField;
         
-        private ServiceReferenceWeather.Visibility visibilityField;
+        private ServiceReferenceForecast.Visibility visibilityField;
         
-        private ServiceReferenceWeather.Wspd wspdField;
+        private ServiceReferenceForecast.Wspd wspdField;
         
-        private ServiceReferenceWeather.Heatindex heatindexField;
+        private ServiceReferenceForecast.Heatindex heatindexField;
         
-        private ServiceReferenceWeather.Cloudcover cloudcoverField;
+        private ServiceReferenceForecast.Cloudcover cloudcoverField;
         
-        private ServiceReferenceWeather.Pop popField;
+        private ServiceReferenceForecast.Pop popField;
         
-        private ServiceReferenceWeather.Datetime datetimeField;
+        private ServiceReferenceForecast.Datetime datetimeField;
         
-        private ServiceReferenceWeather.Precip precipField;
+        private ServiceReferenceForecast.Precip precipField;
         
-        private ServiceReferenceWeather.Snowdepth snowdepthField;
+        private ServiceReferenceForecast.Snowdepth snowdepthField;
         
-        private ServiceReferenceWeather.Snow snowField;
+        private ServiceReferenceForecast.Snow snowField;
         
-        private ServiceReferenceWeather.Name nameField;
+        private ServiceReferenceForecast.Name nameField;
         
-        private ServiceReferenceWeather.Humidity humidityField;
+        private ServiceReferenceForecast.Humidity humidityField;
         
-        private ServiceReferenceWeather.Wgust wgustField;
+        private ServiceReferenceForecast.Wgust wgustField;
         
-        private ServiceReferenceWeather.Conditions conditionsField;
+        private ServiceReferenceForecast.Conditions conditionsField;
         
-        private ServiceReferenceWeather.Windchill windchillField;
+        private ServiceReferenceForecast.Windchill windchillField;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ServiceReferenceWeather.Temp temp
+        public ServiceReferenceForecast.Temp temp
         {
             get
             {
@@ -144,7 +144,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ServiceReferenceWeather.Visibility visibility
+        public ServiceReferenceForecast.Visibility visibility
         {
             get
             {
@@ -157,7 +157,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ServiceReferenceWeather.Wspd wspd
+        public ServiceReferenceForecast.Wspd wspd
         {
             get
             {
@@ -170,7 +170,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public ServiceReferenceWeather.Heatindex heatindex
+        public ServiceReferenceForecast.Heatindex heatindex
         {
             get
             {
@@ -183,7 +183,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public ServiceReferenceWeather.Cloudcover cloudcover
+        public ServiceReferenceForecast.Cloudcover cloudcover
         {
             get
             {
@@ -196,7 +196,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public ServiceReferenceWeather.Pop pop
+        public ServiceReferenceForecast.Pop pop
         {
             get
             {
@@ -209,7 +209,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public ServiceReferenceWeather.Datetime datetime
+        public ServiceReferenceForecast.Datetime datetime
         {
             get
             {
@@ -222,7 +222,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public ServiceReferenceWeather.Precip precip
+        public ServiceReferenceForecast.Precip precip
         {
             get
             {
@@ -235,7 +235,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public ServiceReferenceWeather.Snowdepth snowdepth
+        public ServiceReferenceForecast.Snowdepth snowdepth
         {
             get
             {
@@ -248,7 +248,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public ServiceReferenceWeather.Snow snow
+        public ServiceReferenceForecast.Snow snow
         {
             get
             {
@@ -261,7 +261,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
-        public ServiceReferenceWeather.Name name
+        public ServiceReferenceForecast.Name name
         {
             get
             {
@@ -274,7 +274,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
-        public ServiceReferenceWeather.Humidity humidity
+        public ServiceReferenceForecast.Humidity humidity
         {
             get
             {
@@ -287,7 +287,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
-        public ServiceReferenceWeather.Wgust wgust
+        public ServiceReferenceForecast.Wgust wgust
         {
             get
             {
@@ -300,7 +300,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
-        public ServiceReferenceWeather.Conditions conditions
+        public ServiceReferenceForecast.Conditions conditions
         {
             get
             {
@@ -313,7 +313,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
-        public ServiceReferenceWeather.Windchill windchill
+        public ServiceReferenceForecast.Windchill windchill
         {
             get
             {
@@ -339,9 +339,9 @@ namespace ServiceReferenceWeather
     public partial class Location : object
     {
         
-        private ServiceReferenceWeather.Object stationContributionsField;
+        private ServiceReferenceForecast.Object stationContributionsField;
         
-        private ServiceReferenceWeather.Value[] valuesField;
+        private ServiceReferenceForecast.Value[] valuesField;
         
         private string idField;
         
@@ -361,12 +361,12 @@ namespace ServiceReferenceWeather
         
         private string tzField;
         
-        private ServiceReferenceWeather.Currentconditions currentConditionsField;
+        private ServiceReferenceForecast.Currentconditions currentConditionsField;
         
-        private ServiceReferenceWeather.Object alertsField;
+        private ServiceReferenceForecast.Object alertsField;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ServiceReferenceWeather.Object stationContributions
+        public ServiceReferenceForecast.Object stationContributions
         {
             get
             {
@@ -379,7 +379,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReferenceWeather.Value[] values
+        public ServiceReferenceForecast.Value[] values
         {
             get
             {
@@ -509,7 +509,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
-        public ServiceReferenceWeather.Currentconditions currentConditions
+        public ServiceReferenceForecast.Currentconditions currentConditions
         {
             get
             {
@@ -522,7 +522,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
-        public ServiceReferenceWeather.Object alerts
+        public ServiceReferenceForecast.Object alerts
         {
             get
             {
@@ -815,7 +815,7 @@ namespace ServiceReferenceWeather
         
         private System.Nullable<float> typeField;
         
-        private ServiceReferenceWeather.Object unitField;
+        private ServiceReferenceForecast.Object unitField;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string id
@@ -857,7 +857,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ServiceReferenceWeather.Object unit
+        public ServiceReferenceForecast.Object unit
         {
             get
             {
@@ -882,7 +882,7 @@ namespace ServiceReferenceWeather
         
         private System.Nullable<float> typeField;
         
-        private ServiceReferenceWeather.Object unitField;
+        private ServiceReferenceForecast.Object unitField;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string id
@@ -924,7 +924,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ServiceReferenceWeather.Object unit
+        public ServiceReferenceForecast.Object unit
         {
             get
             {
@@ -949,7 +949,7 @@ namespace ServiceReferenceWeather
         
         private System.Nullable<float> typeField;
         
-        private ServiceReferenceWeather.Object unitField;
+        private ServiceReferenceForecast.Object unitField;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string id
@@ -991,7 +991,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ServiceReferenceWeather.Object unit
+        public ServiceReferenceForecast.Object unit
         {
             get
             {
@@ -1217,7 +1217,7 @@ namespace ServiceReferenceWeather
         
         private System.Nullable<float> typeField;
         
-        private ServiceReferenceWeather.Object unitField;
+        private ServiceReferenceForecast.Object unitField;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string id
@@ -1259,7 +1259,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ServiceReferenceWeather.Object unit
+        public ServiceReferenceForecast.Object unit
         {
             get
             {
@@ -1284,7 +1284,7 @@ namespace ServiceReferenceWeather
         
         private System.Nullable<float> typeField;
         
-        private ServiceReferenceWeather.Object unitField;
+        private ServiceReferenceForecast.Object unitField;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string id
@@ -1326,7 +1326,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ServiceReferenceWeather.Object unit
+        public ServiceReferenceForecast.Object unit
         {
             get
             {
@@ -1418,7 +1418,7 @@ namespace ServiceReferenceWeather
         
         private System.Nullable<float> typeField;
         
-        private ServiceReferenceWeather.Object unitField;
+        private ServiceReferenceForecast.Object unitField;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string id
@@ -1460,7 +1460,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public ServiceReferenceWeather.Object unit
+        public ServiceReferenceForecast.Object unit
         {
             get
             {
@@ -1560,17 +1560,17 @@ namespace ServiceReferenceWeather
         
         private string stationsField;
         
-        private ServiceReferenceWeather.Object heatindexField;
+        private ServiceReferenceForecast.Object heatindexField;
         
         private System.Nullable<float> cloudcoverField;
         
         private System.DateTime datetimeField;
         
-        private ServiceReferenceWeather.Object precipField;
+        private ServiceReferenceForecast.Object precipField;
         
         private System.Nullable<float> moonphaseField;
         
-        private ServiceReferenceWeather.Object snowdepthField;
+        private ServiceReferenceForecast.Object snowdepthField;
         
         private System.Nullable<float> sealevelpressureField;
         
@@ -1676,7 +1676,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public ServiceReferenceWeather.Object heatindex
+        public ServiceReferenceForecast.Object heatindex
         {
             get
             {
@@ -1715,7 +1715,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
-        public ServiceReferenceWeather.Object precip
+        public ServiceReferenceForecast.Object precip
         {
             get
             {
@@ -1741,7 +1741,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
-        public ServiceReferenceWeather.Object snowdepth
+        public ServiceReferenceForecast.Object snowdepth
         {
             get
             {
@@ -1846,7 +1846,7 @@ namespace ServiceReferenceWeather
         
         private System.DateTime datetimeStrField;
         
-        private ServiceReferenceWeather.Object heatindexField;
+        private ServiceReferenceForecast.Object heatindexField;
         
         private System.Nullable<float> cloudcoverField;
         
@@ -1921,7 +1921,7 @@ namespace ServiceReferenceWeather
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public ServiceReferenceWeather.Object heatindex
+        public ServiceReferenceForecast.Object heatindex
         {
             get
             {
@@ -2065,12 +2065,12 @@ namespace ServiceReferenceWeather
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceWeather.IForecastService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceForecast.IForecastService")]
     public interface IForecastService
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IForecastService/GetForecast", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReferenceWeather.GetForecastResponse> GetForecastAsync(ServiceReferenceWeather.GetForecastRequest request);
+        System.Threading.Tasks.Task<ServiceReferenceForecast.GetForecastResponse> GetForecastAsync(ServiceReferenceForecast.GetForecastRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2081,13 +2081,13 @@ namespace ServiceReferenceWeather
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetForecast", Namespace="http://tempuri.org/", Order=0)]
-        public ServiceReferenceWeather.GetForecastRequestBody Body;
+        public ServiceReferenceForecast.GetForecastRequestBody Body;
         
         public GetForecastRequest()
         {
         }
         
-        public GetForecastRequest(ServiceReferenceWeather.GetForecastRequestBody Body)
+        public GetForecastRequest(ServiceReferenceForecast.GetForecastRequestBody Body)
         {
             this.Body = Body;
         }
@@ -2125,13 +2125,13 @@ namespace ServiceReferenceWeather
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetForecastResponse", Namespace="http://tempuri.org/", Order=0)]
-        public ServiceReferenceWeather.GetForecastResponseBody Body;
+        public ServiceReferenceForecast.GetForecastResponseBody Body;
         
         public GetForecastResponse()
         {
         }
         
-        public GetForecastResponse(ServiceReferenceWeather.GetForecastResponseBody Body)
+        public GetForecastResponse(ServiceReferenceForecast.GetForecastResponseBody Body)
         {
             this.Body = Body;
         }
@@ -2145,26 +2145,26 @@ namespace ServiceReferenceWeather
     {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ServiceReferenceWeather.Forecast GetForecastResult;
+        public ServiceReferenceForecast.Forecast GetForecastResult;
         
         public GetForecastResponseBody()
         {
         }
         
-        public GetForecastResponseBody(ServiceReferenceWeather.Forecast GetForecastResult)
+        public GetForecastResponseBody(ServiceReferenceForecast.Forecast GetForecastResult)
         {
             this.GetForecastResult = GetForecastResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    public interface IForecastServiceChannel : ServiceReferenceWeather.IForecastService, System.ServiceModel.IClientChannel
+    public interface IForecastServiceChannel : ServiceReferenceForecast.IForecastService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    public partial class ForecastServiceClient : System.ServiceModel.ClientBase<ServiceReferenceWeather.IForecastService>, ServiceReferenceWeather.IForecastService
+    public partial class ForecastServiceClient : System.ServiceModel.ClientBase<ServiceReferenceForecast.IForecastService>, ServiceReferenceForecast.IForecastService
     {
         
         /// <summary>
@@ -2208,18 +2208,18 @@ namespace ServiceReferenceWeather
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ServiceReferenceWeather.GetForecastResponse> ServiceReferenceWeather.IForecastService.GetForecastAsync(ServiceReferenceWeather.GetForecastRequest request)
+        System.Threading.Tasks.Task<ServiceReferenceForecast.GetForecastResponse> ServiceReferenceForecast.IForecastService.GetForecastAsync(ServiceReferenceForecast.GetForecastRequest request)
         {
             return base.Channel.GetForecastAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ServiceReferenceWeather.GetForecastResponse> GetForecastAsync(string location, string key)
+        public System.Threading.Tasks.Task<ServiceReferenceForecast.GetForecastResponse> GetForecastAsync(string location, string key)
         {
-            ServiceReferenceWeather.GetForecastRequest inValue = new ServiceReferenceWeather.GetForecastRequest();
-            inValue.Body = new ServiceReferenceWeather.GetForecastRequestBody();
+            ServiceReferenceForecast.GetForecastRequest inValue = new ServiceReferenceForecast.GetForecastRequest();
+            inValue.Body = new ServiceReferenceForecast.GetForecastRequestBody();
             inValue.Body.location = location;
             inValue.Body.key = key;
-            return ((ServiceReferenceWeather.IForecastService)(this)).GetForecastAsync(inValue);
+            return ((ServiceReferenceForecast.IForecastService)(this)).GetForecastAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

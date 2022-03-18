@@ -1,13 +1,13 @@
-using ServiceReferenceWeather;
-
-namespace Dashboard.Data
+using DataModels;
+using ServiceReferenceForecast;
+namespace Dashboard.Services
 {
-    public class WeatherForecastService
+    public class WeatherForecastService : IWeatherForecastService
     {
         private readonly string _key = "Jeger1studerende";
         private readonly string _location = "Kolding";
 
-        public async Task<WeatherForecast> GetWeatherAsync()
+        public async Task<WeatherForecastModel> GetWeatherAsync()
         {
             string key = _key;
             string location = _location;
@@ -17,7 +17,7 @@ namespace Dashboard.Data
 
             var result = response.location.values[1];
 
-            return await Task.FromResult(new WeatherForecast
+            return await Task.FromResult(new WeatherForecastModel
             {
                 Cloudcover = (float)result.cloudcover,
                 Temperature = (float)result.temp,
@@ -29,14 +29,16 @@ namespace Dashboard.Data
 
         }
 
-        public async Task<WeatherForecast[]> GetWeatherMultiAsync(string location, string key)
+        public async Task<WeatherForecastModel[]> GetWeatherMultiAsync()
         {
+            string key = _key;
+            string location = _location;
 
             ForecastServiceClient client = new();
             Forecast response = client.GetForecastAsync(location, key).Result.Body.GetForecastResult;
 
             var result = response.location.values;
-            return await Task.FromResult(Enumerable.Range(0, 24).Select(index => new WeatherForecast
+            return await Task.FromResult(Enumerable.Range(0, 24).Select(index => new WeatherForecastModel
             {
                 Cloudcover = (float)result[index].cloudcover,
                 Temperature = (float)result[index].temp,

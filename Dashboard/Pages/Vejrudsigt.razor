@@ -1,9 +1,9 @@
 ﻿@page "/vejrudsigt"
 
 <PageTitle>Weather forecast</PageTitle>
-
-@using Dashboard.Data
-@inject WeatherForecastService ForecastMultiService
+@using DataModels;
+@using Dashboard.Services
+@inject IWeatherForecastService _forecastservice
 
 
 @if (forecasts == null)
@@ -40,10 +40,10 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private WeatherForecastModel[]? forecasts = null;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastMultiService.GetWeatherMultiAsync("Kolding", "Jeger1studerende");
+        forecasts = await _forecastservice.GetWeatherMultiAsync();
     }
 }

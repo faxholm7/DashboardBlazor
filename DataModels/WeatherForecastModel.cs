@@ -1,7 +1,13 @@
-namespace Dashboard.Data
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataModels
 {
-    public class WeatherForecast
-    {       
+    public class WeatherForecastModel
+    {
         public float Temperature { get; set; }
 
         public string? Conditions { get; set; }

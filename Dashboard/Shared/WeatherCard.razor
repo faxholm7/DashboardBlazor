@@ -1,5 +1,6 @@
-﻿@using Dashboard.Data
-@inject WeatherForecastService ForecastService
+﻿@using DataModels
+@using Dashboard.Services
+@inject IWeatherForecastService _forecastservice
 
 
 <div class="col-xl-3">
@@ -35,10 +36,10 @@
     </div>
 </div>
 @code {
-    private WeatherForecast? forecast;
+    private WeatherForecastModel forecast = null;
 
     protected override async Task OnInitializedAsync()
     {
-        forecast = await ForecastService.GetWeatherAsync();
+        forecast = await _forecastservice.GetWeatherAsync();
     }
 }

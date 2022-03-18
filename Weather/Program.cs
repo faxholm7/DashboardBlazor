@@ -1,0 +1,1 @@
+﻿Console.WriteLine("WeatherForecast SOAP Service");
