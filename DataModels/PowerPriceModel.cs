@@ -10,8 +10,7 @@ namespace DataModels
     public class PowerPriceModel
     {
         public double SpotPriceDKK { get; set; }
-
-       // [Timestamp]
+    
         public DateTime HourDK { get; set; }
         
     }

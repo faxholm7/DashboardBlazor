@@ -11,8 +11,6 @@ namespace PowerPrice.Api.Controllers
     {
 
         [HttpGet]
-        [Route("getPowerPrice")]
-
         public async Task<IActionResult> getPowerPrice()
         {         
 
@@ -33,5 +31,3 @@ namespace PowerPrice.Api.Controllers
         }
     }
 }
-
-//https://api.energidataservice.dk/datastore_search_sql?sql=SELECT "HourDK", "SpotPriceDKK" from "elspotprices" WHERE "PriceArea"='DK1' ORDER BY "HourDK" DESC LIMIT 24

@@ -9,15 +9,16 @@
                <b>Elpris i Vestdanmark</b>
             </div>
             <div class="card-body">
-                <em class="card-title">
-                   Elpris den kommende time
-                    </em>
+               
             @if(data == null)
             {
                <p class="mt-5 mb-5"><em>Henter data...</em></p> 
             }
             else
             { 
+                 <em class="card-title">
+                   Elpris den kommende time
+                    </em>
 
                 <ul class="list-group list-group-flush mt-3 mb-2">
                             <li class="list-group-item">Dato: <span class="float-end">@data.HourDK.ToShortDateString()</span></li>
