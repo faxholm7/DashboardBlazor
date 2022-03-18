@@ -21,14 +21,16 @@ namespace Weather.Api.Controllers
         {
             ForecastServiceClient client = new();
             Forecast response = client.GetForecastAsync(location, key).Result.Body.GetForecastResult;
-            var result =  response.location.values[1];
+            var result =  response.location;
 
             return await Task.FromResult(new WeatherModel
             {
-                Cloudcover = (float)result.cloudcover,
-                Temperature = (float)result.temp,
-                Conditions = result.conditions,
-                Day = DateTimeOffset.FromUnixTimeMilliseconds(result.datetime).DateTime,
+                Cloudcover = (float)result.values[1].cloudcover,
+                Temperature = (float)result.values[1].temp,
+                Conditions = result.values[1].conditions,
+                Day = result.values[1].datetimeStr,
+                Sunrise = result.currentConditions.sunrise,
+                Sunset = result.currentConditions.sunset,
                 Location = location
             });
 
@@ -41,14 +43,16 @@ namespace Weather.Api.Controllers
             ForecastServiceClient client = new();
             Forecast response = client.GetForecastAsync(location, key).Result.Body.GetForecastResult;
 
-            var result = response.location.values;
+            var result = response.location;
 
             return await Task.FromResult(Enumerable.Range(0, 24).Select(index => new WeatherModel
             {
-                Cloudcover = (float)result[index].cloudcover,
-                Temperature = (float)result[index].temp,
-                Conditions = result[index].conditions,
-                Day = DateTimeOffset.FromUnixTimeMilliseconds(result[index].datetime).DateTime,
+                Cloudcover = (float)result.values[index].cloudcover,
+                Temperature = (float)result.values[index].temp,
+                Conditions = result.values[index].conditions,
+                Day = result.values[index].datetimeStr,
+                Sunrise = result.currentConditions.sunrise,
+                Sunset = result.currentConditions.sunset,
                 Location = location
             }).ToArray());
 

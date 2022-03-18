@@ -26,7 +26,9 @@
                 <ul class="list-group list-group-flush mt-3 mb-2">
                     <li class="list-group-item">Temperatur: <span class="float-end">@forecast.Temperature &#8451;</span></li>
                     <li class="list-group-item">Skydække: <span class="float-end">@forecast.Cloudcover %</span> </li>
-                    <li class="list-group-item">Conditions: <span class="float-end">@forecast.Conditions</span></li>
+                   <!-- <li class="list-group-item">Conditions: <span class="float-end">@forecast.Conditions</span></li>-->
+                    <li class="list-group-item">Solopgang: <span class="float-end">@forecast.Sunrise.ToString("HH:mm")</span> </li>
+                    <li class="list-group-item">Solnedgang: <span class="float-end">@forecast.Sunset.ToString("HH:mm")</span> </li>
                 </ul>
                 <a href="vejrudsigt" class="btn btn-secondary btn-sm float-end">Se 24 timer</a>
 
