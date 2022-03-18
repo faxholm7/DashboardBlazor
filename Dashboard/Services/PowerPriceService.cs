@@ -9,7 +9,7 @@ namespace Dashboard.Services
         private readonly HttpClient httpClient;
         public PowerPriceService(HttpClient _httpClient)
         {
-            this.httpClient = _httpClient;
+            httpClient = _httpClient;
         }
         public async Task<PowerPriceModel> getPowerPrice()
         {

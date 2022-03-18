@@ -1,1 +1,1 @@
-﻿Console.WriteLine("WeatherForecast SOAP Service");
+﻿Console.WriteLine("WeatherForecast SOAP Service\nDette vindue må ikke lukkes");
