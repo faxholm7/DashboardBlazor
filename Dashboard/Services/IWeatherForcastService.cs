@@ -3,7 +3,7 @@ namespace Dashboard.Services
 {
     public interface IWeatherForecastService
     {
-        Task<WeatherForecastModel> GetWeatherAsync();
-        Task<WeatherForecastModel[]> GetWeatherMultiAsync();
+        Task<WeatherForecastModel> GetWeather();
+        Task<WeatherForecastModel[]> GetWeatherForecast();
     }
 }

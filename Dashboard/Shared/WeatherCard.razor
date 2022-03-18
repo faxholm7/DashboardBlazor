@@ -6,7 +6,7 @@
 <div class="col-xl-3">
     <div class="card mb-3">
         <div class="card-header">
-            <b>Vejret i <span>@forecast.Location</span></b>
+            <b>Vejret i <span>Kolding</span></b>
         </div>
         <div class="card-body">
 
@@ -36,10 +36,11 @@
     </div>
 </div>
 @code {
-    private WeatherForecastModel forecast = null;
+    private WeatherForecastModel? forecast = null;
 
     protected override async Task OnInitializedAsync()
     {
-        forecast = await _forecastservice.GetWeatherAsync();
+        var result = await _forecastservice.GetWeather();
+
     }
 }

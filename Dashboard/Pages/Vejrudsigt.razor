@@ -8,12 +8,12 @@
 
 @if (forecasts == null)
 {
-    <p><em>Loading...</em></p>
+    <p class="mt-5"><em>Henter data...</em></p>
 
 }
 else
 {
-    <h1>Vejrudsigt for <span>@forecasts[0].Location</span></h1>
+    <h1>Vejrudsigt for <span>Kolding</span></h1>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -44,6 +44,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await _forecastservice.GetWeatherMultiAsync();
+        forecasts = await _forecastservice.GetWeatherForecast();
     }
 }
