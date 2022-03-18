@@ -1,5 +1,6 @@
 ﻿@using DataModels
 @using Dashboard.Services
+@using System.Text.Json
 @inject IWeatherForecastService _forecastservice
 
 
@@ -39,7 +40,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var forecast = await _forecastservice.GetWeather();
+        forecast = await _forecastservice.GetWeather();
 
     }
 }
