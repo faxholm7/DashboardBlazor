@@ -4,9 +4,13 @@ namespace Dashboard.Data
 {
     public class WeatherForecastService
     {
+        private readonly string _key = "Jeger1studerende";
+        private readonly string _location = "Kolding";
 
-        public async Task<WeatherForecast> GetWeatherAsync(string location, string key)
+        public async Task<WeatherForecast> GetWeatherAsync()
         {
+            string key = _key;
+            string location = _location;
 
             ForecastServiceClient client = new();
             Forecast response = client.GetForecastAsync(location, key).Result.Body.GetForecastResult;

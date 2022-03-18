@@ -5,9 +5,9 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dashboard", "Dashboard\Dashboard.csproj", "{F23509B6-91EB-4064-8044-1776C7203E1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerPrice.Api", "Elpriser\PowerPrice.Api.csproj", "{6C2D1C67-1188-4FEB-A5BF-8CAF5AB99972}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerPrice.Api", "Elpriser\PowerPrice.Api.csproj", "{6C2D1C67-1188-4FEB-A5BF-8CAF5AB99972}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModels", "DataModels\DataModels.csproj", "{03FD426E-338F-48A4-99FA-AA33D31BEE4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataModels", "DataModels\DataModels.csproj", "{03FD426E-338F-48A4-99FA-AA33D31BEE4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
