@@ -14,7 +14,7 @@
                     </em>
             @if(data == null)
             {
-               <p class="mt-5"><em>Henter data...</em></p> 
+               <p class="mt-5 mb-5"><em>Henter data...</em></p> 
             }
             else
             { 
@@ -24,7 +24,7 @@
                             <li class="list-group-item">Klokken: <span class="float-end">@data.HourDK.ToString("HH:mm")</span></li>
                             <li class="list-group-item">Pris: <span class="float-end">@data.SpotPriceDKK DKK</span></li>
                         </ul>
-                        <button type="button" class="btn btn-primary btn-sm float-end">Reload</button>
+                      <!--  <button type="button" class="btn btn-primary btn-sm float-end">Reload</button>-->
             }
 
             </div>
