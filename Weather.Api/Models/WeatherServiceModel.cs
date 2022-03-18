@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Weather.Api.Models
 {
-    public class WeatherModel
+    public class WeatherServiceModel
     {
         public float Temperature { get; set; }
         public string? Conditions { get; set; }

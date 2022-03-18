@@ -17,13 +17,13 @@ namespace Weather.Api.Controllers
         private readonly string location = "Kolding";
 
         [HttpGet]
-        public async Task<WeatherModel> GetWeather()
+        public async Task<WeatherServiceModel> GetWeather()
         {
             ForecastServiceClient client = new();
             Forecast response = client.GetForecastAsync(location, key).Result.Body.GetForecastResult;
             var result =  response.location;
 
-            return await Task.FromResult(new WeatherModel
+            return await Task.FromResult(new WeatherServiceModel
             {
                 Cloudcover = (float)result.values[1].cloudcover,
                 Temperature = (float)result.values[1].temp,
@@ -38,14 +38,14 @@ namespace Weather.Api.Controllers
 
         [HttpGet]
         [Route("24hours")]
-        public async Task<WeatherModel[]> GetWeatherForecast()
+        public async Task<WeatherServiceModel[]> GetWeatherForecast()
         {   
             ForecastServiceClient client = new();
             Forecast response = client.GetForecastAsync(location, key).Result.Body.GetForecastResult;
 
             var result = response.location;
 
-            return await Task.FromResult(Enumerable.Range(0, 24).Select(index => new WeatherModel
+            return await Task.FromResult(Enumerable.Range(0, 24).Select(index => new WeatherServiceModel
             {
                 Cloudcover = (float)result.values[index].cloudcover,
                 Temperature = (float)result.values[index].temp,
