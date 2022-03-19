@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataModels", "DataModels\Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Api", "Weather.Api\Weather.Api.csproj", "{66541073-10E0-4FD7-B2BC-C0E6B3F3EEFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inverter.Api", "Inverter.Api\Inverter.Api.csproj", "{6EEFBB6C-9136-43C9-8C2C-68BBE6BCA370}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{66541073-10E0-4FD7-B2BC-C0E6B3F3EEFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66541073-10E0-4FD7-B2BC-C0E6B3F3EEFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66541073-10E0-4FD7-B2BC-C0E6B3F3EEFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EEFBB6C-9136-43C9-8C2C-68BBE6BCA370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EEFBB6C-9136-43C9-8C2C-68BBE6BCA370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EEFBB6C-9136-43C9-8C2C-68BBE6BCA370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EEFBB6C-9136-43C9-8C2C-68BBE6BCA370}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

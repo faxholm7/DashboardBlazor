@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using ServiceReferenceWeather;
-using Weather.Api.Models;
 
 namespace Weather.Api.Controllers
 {

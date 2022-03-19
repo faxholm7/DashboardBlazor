@@ -3,22 +3,18 @@
 @using System.Text.Json
 @inject IWeatherForecastService _forecastservice
 
-
 <div class="col-xl-3 p-2">
     <div class="card mb-3 h-100">
         <div class="card-header">
             <b>Vejret i <span>Kolding</span></b>
         </div>
         <div class="card-body">
-
             @if (forecast == null)
             {
                 <p class="mt-5 mb-5"><em>Henter data...</em></p>
-
             }
             else
             {
-
                 <em class="card-title">
                     Den <span>@forecast.Day.ToShortDateString()</span>
                     kl.<span>@forecast.Day.ToString("HH:mm")</span>
@@ -31,12 +27,11 @@
                     <li class="list-group-item">Solnedgang: <span class="float-end">@forecast.Sunset.ToString("HH:mm")</span> </li>
                 </ul>
                 <a href="vejrudsigt" class="btn btn-secondary btn-sm float-end">Se 24 timer</a>
-
             }
-
         </div>
     </div>
 </div>
+
 @code {
     private WeatherForecastModel forecast = null;
 
