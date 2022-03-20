@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
-using PowerPrice.Api.Models;
 
 namespace PowerPrice.Api.Controllers
 {

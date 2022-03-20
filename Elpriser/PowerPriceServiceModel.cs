@@ -1,4 +1,4 @@
-﻿namespace PowerPrice.Api.Models
+﻿namespace PowerPrice.Api
 {
     public class PowerPriceServiceModel
     {   
