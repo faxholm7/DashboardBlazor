@@ -1,0 +1,46 @@
+﻿@page "/elproduktion"
+
+<PageTitle>Vejrudsigt</PageTitle>
+@using DataModels;
+@using Dashboard.Services
+@inject IPowerProductionService _powerproductionservice
+
+
+@if (powerproduction == null)
+{
+    <Preloader />
+
+}
+else
+{
+    <h1>Elproduktion fra Solceller</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Power Production</th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach (var production in powerproduction)
+            {
+                <tr>
+                    <td>@DateTime.Parse(production.StartTime).ToShortDateString()</td>
+                     <td>@DateTime.Parse(production.StartTime).ToString("HH:mm")</td>
+                     <td>@(int.Parse(production.EnergyStart) - int.Parse(powerproduction[0].EnergyStart)  + " Watt")</td>
+                </tr>
+              
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private PowerProductionModel[]? powerproduction = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        powerproduction = await _powerproductionservice.GetFullProduction();
+    }
+}

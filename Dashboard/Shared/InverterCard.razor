@@ -9,13 +9,14 @@
         <div class="card-header">
             <b>Elproduktion</b>
         </div>
-        <div class="card-body">
+       
             @if (production == null)
             {
                  <Preloader />
             }
             else
             {
+                 <div class="card-body">
                 <em class="card-title">
                     Elproduktion den seneste time
                 </em>
@@ -32,15 +33,22 @@
                     <li class="list-group-item">
                         @if(production.StartTime != null)
                         {
-                            <span>Total produktion i perioden: </span><span class="float-end">@(int.Parse(production.EnergyEnd) - int.Parse(production.EnergyStart) + " Watt")</span>
+                            <span>Produktion i perioden: </span><span class="float-end">@(int.Parse(production.EnergyEnd) - int.Parse(production.EnergyStart) + " Watt")</span>
                         }else{
                             <b>Ingen strømproduktion den seneste time</b>
                         }                      
                     </li>
                 </ul>
+            
+                  
+                        
+                  </div> 
+                 <div class="card-footer">
+                     <a href="elproduktion" class="btn btn-secondary btn-sm float-end">Se 60 minutter</a>
+                 </div>
             }
 
-        </div>
+        
     </div>
 </div>
 

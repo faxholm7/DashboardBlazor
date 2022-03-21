@@ -1,37 +1,39 @@
-﻿
-@using DataModels
+﻿@using DataModels
 @using Dashboard.Services
 @inject IPowerPriceService _powerpriceservice
 
-    <div class="col-xl-3 p-2">
-        <div class="card mb-3  h-100">
-            <div class="card-header">
-               <b>Elpris i Vestdanmark</b>
-            </div>
+<div class="col-xl-3 p-2">
+    <div class="card mb-3  h-100">
+        <div class="card-header">
+            <b>Elpris i Vestdanmark</b>
+        </div>
+
+
+        @if (data == null)
+        {
+            <Preloader />
+        }
+        else
+        {
             <div class="card-body">
-               
-            @if(data == null)
-            {
-                <Preloader />
-            }
-            else
-            { 
-                 <em class="card-title">
-                   Elpris den kommende time
-                    </em>
+                <em class="card-title">
+                    Elpris den kommende time
+                </em>
 
                 <ul class="list-group list-group-flush mt-3 mb-2">
-                            <li class="list-group-item">Dato: <span class="float-end">@data.HourDK.ToShortDateString()</span></li>
-                            <li class="list-group-item">Klokken: <span class="float-end">@data.HourDK.ToString("HH:mm")</span></li>
-                            <li class="list-group-item">Pris: <span class="float-end">@data.SpotPriceDKK DKK</span></li>
-                        </ul>
-                      <!--  <button type="button" class="btn btn-primary btn-sm float-end">Reload</button>-->
-            }
-
+                    <li class="list-group-item">Dato: <span class="float-end">@data.HourDK.ToShortDateString()</span></li>
+                    <li class="list-group-item">Klokken: <span class="float-end">@data.HourDK.ToString("HH:mm")</span></li>
+                    <li class="list-group-item">Pris: <span class="float-end">@data.SpotPriceDKK DKK</span></li>
+                </ul>
             </div>
-        </div>
+            <div class="card-footer"></div>
+
+        }
+
+
     </div>
-@code{
+</div>
+@code {
     private PowerPriceModel data = null;
     protected override async Task OnInitializedAsync()
     {

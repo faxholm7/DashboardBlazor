@@ -13,5 +13,10 @@ namespace Dashboard.Services
         {
             return await httpClient.GetJsonAsync<PowerProductionModel>("http://localhost:5118/api/Inverter");
         }
+
+        public async Task<PowerProductionModel[]> GetFullProduction()
+        {
+            return await httpClient.GetJsonAsync<PowerProductionModel[]>("http://localhost:5118/api/Inverter/60min");
+        }
     }
 }
