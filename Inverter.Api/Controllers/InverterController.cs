@@ -7,7 +7,7 @@ using CsvHelper.Configuration;
 namespace Inverter.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class InverterController : ControllerBase
     {
         private static readonly string? file = "danfoss-21" + DateTime.Now.ToString("MMddHH*"); //"danfoss-210712120003";
@@ -56,12 +56,12 @@ namespace Inverter.Api.Controllers
                     if (i == 6)
                     {
                         model.StartTime = csvReader.GetField(1);
-                        model.EnergyStart = csvReader.GetField(37);
+                        model.EnergyStart = csvReader.GetField(37);// int.Parse(csvReader.GetField(37));
                     }
                     if (csvReader.GetField(1) != null)
                     {
                         model.EndTime = csvReader.GetField(1);
-                        model.EnergyEnd = csvReader.GetField(37);
+                        model.EnergyEnd = csvReader.GetField(37);// int.Parse(csvReader.GetField(37));
                     }
                     ++i;
                 }

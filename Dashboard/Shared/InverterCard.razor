@@ -1,18 +1,56 @@
-﻿
+﻿@using DataModels
+@using Dashboard.Services
+@using System.Text.Json
+@using Microsoft.AspNetCore.Html
+@inject IPowerProductionService _powerproductionservice
 
-    <div class="col-xl-3 p-2">
-        <div class="card mb-3 h-100">
-            <div class="card-header">
-               <b>Elproduktion</b>
-            </div>
-            <div class="card-body">
+<div class="col-xl-3 p-2">
+    <div class="card mb-3 h-100">
+        <div class="card-header">
+            <b>Elproduktion</b>
+        </div>
+        <div class="card-body">
+            @if (production == null)
+            {
+                 <Preloader />
+            }
+            else
+            {
                 <em class="card-title">
-                   Work in progress...
-                    </em>
-                     
-            </div>
+                    Elproduktion den seneste time
+                </em>
+                <ul class="list-group list-group-flush mt-3 mb-2">
+
+                    <li class="list-group-item">
+                        Periode start:
+                        <span class="float-end">@(production.StartTime != null ? DateTime.Parse(production.StartTime).ToString("HH:mm") : "")</span>
+                    </li>
+                    <li class="list-group-item">
+                        Periode slut:
+                        <span class="float-end">@(production.StartTime != null ? DateTime.Parse(production.EndTime).ToString("HH:mm") : "")</span>
+                    </li>
+                    <li class="list-group-item">
+                        @if(production.StartTime != null)
+                        {
+                            <span>Total produktion i perioden: </span><span class="float-end">@(int.Parse(production.EnergyEnd) - int.Parse(production.EnergyStart) + " Watt")</span>
+                        }else{
+                            <b>Ingen strømproduktion den seneste time</b>
+                        }                      
+                    </li>
+                </ul>
+            }
+
         </div>
     </div>
-  
+</div>
 
+@code {
+    private PowerProductionModel production = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        production = await _powerproductionservice.getPowerProduction();
+
+    }
+}
 

@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataModels", "DataModels\Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Api", "Weather.Api\Weather.Api.csproj", "{66541073-10E0-4FD7-B2BC-C0E6B3F3EEFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inverter.Api", "Inverter.Api\Inverter.Api.csproj", "{6EEFBB6C-9136-43C9-8C2C-68BBE6BCA370}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inverter.Api", "Inverter.Api\Inverter.Api.csproj", "{6EEFBB6C-9136-43C9-8C2C-68BBE6BCA370}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

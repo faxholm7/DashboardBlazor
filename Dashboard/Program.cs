@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddHttpClient();
+builder.Services.AddTransient<IPowerProductionService, PowerProductionService>();
 builder.Services.AddTransient<IPowerPriceService, PowerPriceService>();
 builder.Services.AddTransient<IWeatherForecastService, WeatherForecastService>();
 
