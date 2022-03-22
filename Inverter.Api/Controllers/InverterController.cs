@@ -10,44 +10,28 @@ namespace Inverter.Api.Controllers
     [Route("api/[controller]")]
     public class InverterController : ControllerBase
     {
-        private static readonly string? file = "danfoss-21" + DateTime.Now.ToString("MMddHH*"); //"danfoss-210712120003";
-        private static readonly string? folder = "ftp://inverter.westeurope.cloudapp.azure.com/";
-        private static readonly string? username = "studerende";
-        private readonly string? password = "kmdp4gslmg46jhs";        
+        private string? file = "danfoss-21" + DateTime.Now.ToString("MMddHH*"); //"danfoss-210712120003";
+        private string? folder = "ftp://inverter.westeurope.cloudapp.azure.com/"; 
+        
 
         [HttpGet]
         public async Task<InverterServiceModel> GetInverter()
         {
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(folder + file);
-            request.Method = WebRequestMethods.Ftp.ListDirectory;
-
-            request.Credentials = new NetworkCredential(username, password);
-
-            FtpWebResponse response = (FtpWebResponse)request.GetResponse();
-            var stream = response.GetResponseStream();
-            var reader = new StreamReader(stream);
-            string filename = reader.ReadToEnd();
+            FtpClientController ftpClientController = new FtpClientController();
+            string filename = await ftpClientController.FindFilename(folder + file);
 
             var model = new InverterServiceModel();
 
             if (filename != "")
             {
-
-                request = (FtpWebRequest)WebRequest.Create(folder + filename);
-                request.Method = WebRequestMethods.Ftp.DownloadFile;
-
-                request.Credentials = new NetworkCredential(username, password);
-
-                response = (FtpWebResponse)await request.GetResponseAsync();
-                stream = response.GetResponseStream();
-
+                Console.Write(filename);
+                var reader = await ftpClientController.DownloadFile(folder + filename);   
                 var csvConfig = new CsvConfiguration(CultureInfo.CurrentCulture)
                 {
                     HasHeaderRecord = false,
                     Delimiter = ";",
                     MissingFieldFound = null,
-                };
-                reader = new StreamReader(stream);
+                };                
                 var csvReader = new CsvReader(reader, csvConfig);
 
                 var i = 0;
@@ -65,7 +49,6 @@ namespace Inverter.Api.Controllers
                     }
                     ++i;
                 }
-
             }
             else
             {
@@ -75,11 +58,17 @@ namespace Inverter.Api.Controllers
                 model.EnergyEnd = null;
 
             }
-            reader.Close();
-            response.Close();
+          
+            //reader.Close();
+            //response.Close();
             return model;
 
         }
+
+
+        private readonly string? username = "studerende";
+        private readonly string? password = "kmdp4gslmg46jhs";
+
         [HttpGet]
         [Route("60min")]
         public async Task<InverterServiceModel[]> GetFullProduction()
@@ -93,6 +82,7 @@ namespace Inverter.Api.Controllers
             var stream = response.GetResponseStream();
             var reader = new StreamReader(stream);
             string filename = reader.ReadToEnd();
+
             if (filename != "")
             {
                 request = (FtpWebRequest)WebRequest.Create(folder + filename);
@@ -127,22 +117,13 @@ namespace Inverter.Api.Controllers
                     }
                     ++i;
                 }
-                 return result.ToArray();
+                reader.Close();
+                response.Close();
+                return result.ToArray();
 
             }
-            //else
-            //{
-            //    return await Task.FromResult(Enumerable.Range(0, 1).Select(index => new InverterServiceModel
-            //    {
-            //        StartTime = null,
-            //        EnergyStart = null,
-            //        EndTime = null,
-            //        EnergyEnd = null
-            //    }).ToArray());
-
-
-            //}
-
+            reader.Close();
+            response.Close();
             return await Task.FromResult(Enumerable.Range(0, 1).Select(index => new InverterServiceModel
             {
                 StartTime = null,

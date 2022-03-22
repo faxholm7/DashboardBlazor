@@ -18,6 +18,7 @@ namespace Weather.Api.Controllers
         [HttpGet]
         public async Task<WeatherServiceModel> GetWeather()
         {
+            Console.WriteLine("Koden er kørt");
             ForecastServiceClient client = new();
             Forecast response = client.GetForecastAsync(location, key).Result.Body.GetForecastResult;
             var result =  response.location;

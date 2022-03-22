@@ -41,11 +41,14 @@
 </div>
 
 @code {
+
     private WeatherForecastModel forecast = null;
 
     protected override async Task OnInitializedAsync()
     {
-        forecast = await _forecastservice.GetWeather();
-
+           
+                forecast = await _forecastservice.GetWeather();
+          
     }
+
 }
