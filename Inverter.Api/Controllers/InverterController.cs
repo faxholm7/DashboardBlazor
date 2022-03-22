@@ -103,11 +103,12 @@ namespace Inverter.Api.Controllers
                 return result.ToArray();
 
             }
-           // reader.Close();
-          //  response.Close();
-            return await Task.FromResult(Enumerable.Range(0, 1).Select(index => new InverterServiceModel
+            // reader.Close();
+            //  response.Close();
+            int hour = DateTime.Now.Hour;
+            return await Task.FromResult(Enumerable.Range(0, 60).Select(index => new InverterServiceModel
             {
-                StartTime = DateTime.Now.ToString(),
+                StartTime = (hour-1 + ":" + index).ToString(),
                 EnergyStart = "0",
                 EndTime = DateTime.Now.ToString(),
                 EnergyEnd = "0"
