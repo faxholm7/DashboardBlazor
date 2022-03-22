@@ -52,11 +52,10 @@ namespace Inverter.Api.Controllers
             }
             else
             {
-                model.StartTime = null;
-                model.EnergyStart = null;
-                model.EndTime = null;
-                model.EnergyEnd = null;
-
+                model.StartTime = DateTime.Now.AddHours(-1).ToString("HH") + ":00";
+                model.EnergyStart = "0";
+                model.EndTime = DateTime.Now.ToString("HH") + ":00";
+                model.EnergyEnd = "0";
             }
           
             //reader.Close();
