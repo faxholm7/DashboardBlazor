@@ -126,9 +126,9 @@ namespace Inverter.Api.Controllers
             response.Close();
             return await Task.FromResult(Enumerable.Range(0, 1).Select(index => new InverterServiceModel
             {
-                StartTime = null,
+                StartTime = DateTime.Now.ToString(),
                 EnergyStart = null,
-                EndTime = null,
+                EndTime = DateTime.Now.ToString(),
                 EnergyEnd = null
             }).ToArray());
 
