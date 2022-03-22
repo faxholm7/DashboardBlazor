@@ -65,40 +65,25 @@ namespace Inverter.Api.Controllers
         }
 
 
-        private readonly string? username = "studerende";
-        private readonly string? password = "kmdp4gslmg46jhs";
+       // private readonly string? username = "studerende";
+       // private readonly string? password = "kmdp4gslmg46jhs";
 
         [HttpGet]
         [Route("60min")]
         public async Task<InverterServiceModel[]> GetFullProduction()
         {
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(folder + file);
-            request.Method = WebRequestMethods.Ftp.ListDirectory;
-
-            request.Credentials = new NetworkCredential(username, password);
-
-            FtpWebResponse response = (FtpWebResponse)request.GetResponse();
-            var stream = response.GetResponseStream();
-            var reader = new StreamReader(stream);
-            string filename = reader.ReadToEnd();
+            FtpClientController ftpClientController = new FtpClientController();
+            string filename = await ftpClientController.FindFilename(folder + file);
 
             if (filename != "")
             {
-                request = (FtpWebRequest)WebRequest.Create(folder + filename);
-                request.Method = WebRequestMethods.Ftp.DownloadFile;
-
-                request.Credentials = new NetworkCredential(username, password);
-
-                response = (FtpWebResponse)await request.GetResponseAsync();
-                stream = response.GetResponseStream();
-
+                var reader = await ftpClientController.DownloadFile(folder + filename);
                 var csvConfig = new CsvConfiguration(CultureInfo.CurrentCulture)
                 {
                     HasHeaderRecord = false,
                     Delimiter = ";",
                     MissingFieldFound = null,
                 };
-                reader = new StreamReader(stream);
                 var csvReader = new CsvReader(reader, csvConfig);
                 List<InverterServiceModel> result = new List<InverterServiceModel>();
                 var i = 0;
@@ -116,13 +101,13 @@ namespace Inverter.Api.Controllers
                     }
                     ++i;
                 }
-                reader.Close();
-                response.Close();
+               // reader.Close();
+              //  response.Close();
                 return result.ToArray();
 
             }
-            reader.Close();
-            response.Close();
+           // reader.Close();
+          //  response.Close();
             return await Task.FromResult(Enumerable.Range(0, 1).Select(index => new InverterServiceModel
             {
                 StartTime = DateTime.Now.ToString(),
@@ -130,9 +115,6 @@ namespace Inverter.Api.Controllers
                 EndTime = DateTime.Now.ToString(),
                 EnergyEnd = "0"
             }).ToArray());
-
-
-
         }
     }
 }
