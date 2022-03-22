@@ -65,9 +65,6 @@ namespace Inverter.Api.Controllers
         }
 
 
-       // private readonly string? username = "studerende";
-       // private readonly string? password = "kmdp4gslmg46jhs";
-
         [HttpGet]
         [Route("60min")]
         public async Task<InverterServiceModel[]> GetFullProduction()
