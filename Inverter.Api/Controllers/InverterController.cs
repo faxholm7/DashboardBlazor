@@ -49,6 +49,7 @@ namespace Inverter.Api.Controllers
                     }
                     ++i;
                 }
+                reader.Close();
             }
             else
             {
@@ -56,12 +57,8 @@ namespace Inverter.Api.Controllers
                 model.EnergyStart = "0";
                 model.EndTime = DateTime.Now.ToString("HH") + ":00";
                 model.EnergyEnd = "0";
-            }
-          
-            //reader.Close();
-            //response.Close();
+            }         
             return model;
-
         }
 
 
@@ -98,13 +95,11 @@ namespace Inverter.Api.Controllers
                     }
                     ++i;
                 }
-               // reader.Close();
+                reader.Close();
               //  response.Close();
                 return result.ToArray();
 
             }
-            // reader.Close();
-            //  response.Close();
             int hour = DateTime.Now.Hour;
             return await Task.FromResult(Enumerable.Range(0, 60).Select(index => new InverterServiceModel
             {

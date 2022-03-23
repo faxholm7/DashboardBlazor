@@ -16,6 +16,7 @@ namespace Inverter.Api.Controllers
             FtpWebResponse response = (FtpWebResponse)await request.GetResponseAsync();
             var stream = response.GetResponseStream();
             var reader = new StreamReader(stream);
+            //response.Close();
             return reader.ReadToEnd();
         }
         public async Task<StreamReader> DownloadFile(string filename)
@@ -25,8 +26,9 @@ namespace Inverter.Api.Controllers
 
             request.Credentials = new NetworkCredential(username, password);
 
-            var response = (FtpWebResponse)await request.GetResponseAsync();
+            FtpWebResponse response = (FtpWebResponse)await request.GetResponseAsync();
             var stream = response.GetResponseStream();
+            //response.Close();
             return new StreamReader(stream);
         }
     }
