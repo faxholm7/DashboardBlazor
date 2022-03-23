@@ -61,7 +61,6 @@ namespace Inverter.Api.Controllers
             return model;
         }
 
-
         [HttpGet]
         [Route("60min")]
         public async Task<InverterServiceModel[]> GetFullProduction()
