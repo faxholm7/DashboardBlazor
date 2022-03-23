@@ -32,4 +32,5 @@ namespace Inverter.Api.Controllers
             return new StreamReader(stream);
         }
     }
+
 }
